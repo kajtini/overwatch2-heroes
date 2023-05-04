@@ -2,7 +2,7 @@ import Heroes from "./Heroes";
 
 const Home = () => {
     return (
-        <div>
+        <div className="flex-grow flex flex-col w-full ">
             {/* Charcter List */}
             <Heroes />
         </div>

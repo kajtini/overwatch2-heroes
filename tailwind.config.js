@@ -8,9 +8,27 @@ export default {
             },
 
             backgroundImage: {
-                primary: "url('./assets/explosion.jpg')",
+                primary: "url('./assets/mountain.jpg')",
+            },
+
+            keyframes: {
+                fadeIn: {
+                    "0%": {
+                        transform: "translate(0, 10px)",
+                        opacity: 0,
+                    },
+
+                    "100%": {
+                        transform: "translate(0,0)",
+                        opacity: 100,
+                    },
+                },
+            },
+
+            animation: {
+                fadeIn: "fadeIn 500ms ease-in-out",
             },
         },
     },
-    plugins: [],
+    plugins: [require("tailwind-scrollbar-hide")],
 };
