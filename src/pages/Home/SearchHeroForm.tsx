@@ -1,4 +1,8 @@
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+    faMagnifyingGlass,
+    faHouse,
+    faH,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
@@ -26,7 +30,7 @@ const SearchHeroForm = ({ setSearch, setRoleFilter }: SearchHeroFormProps) => {
 
     return (
         <form
-            className="p-5 bg-white bg-opacity-10 backdrop-blur-md focus:outline-none rounded-lg flex items-center justify-between max-w-sm flex-grow shadow-sm"
+            className="p-5 bg-white bg-opacity-10 backdrop-blur-md focus:outline-none rounded-lg flex items-center justify-between sm:max-w-sm shadow-sm"
             onSubmit={handleSearchSubmit}
         >
             <input

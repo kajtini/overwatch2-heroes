@@ -23,10 +23,23 @@ export default {
                         opacity: 100,
                     },
                 },
+
+                popIn: {
+                    "0%": {
+                        scale: 0,
+                        opacity: 0,
+                    },
+
+                    "100%": {
+                        scale: 1,
+                        opacity: 1,
+                    },
+                },
             },
 
             animation: {
                 fadeIn: "fadeIn 500ms ease-in-out",
+                popIn: "popIn 500ms ease-in-out",
             },
         },
     },
