@@ -1,3 +1,4 @@
+import Hero from "./pages/Hero";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 
@@ -9,6 +10,7 @@ function App() {
             <div className="max-w-[1200px] w-full flex-grow flex flex-col z-10 px-4 py-20">
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/heroes/:id" element={<Hero />} />
                 </Routes>
             </div>
 

@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { replaceSpacesWithDashAndLowercase } from "../../utils/replaceSpacesWithDashAndLowercase";
 
 interface SearchHeroFormProps {
     setSearch: React.Dispatch<React.SetStateAction<string>>;
@@ -18,12 +19,9 @@ const SearchHeroForm = ({ setSearch, setRoleFilter }: SearchHeroFormProps) => {
         e: React.ChangeEvent<HTMLInputElement>
     ) => setSearchContent(e.target.value);
 
-    const replaceSpacesWithDash = (text: string) =>
-        text.toLowerCase().split(" ").join("-");
-
     const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSearch(replaceSpacesWithDash(searchContent));
+        setSearch(replaceSpacesWithDashAndLowercase(searchContent));
         setRoleFilter("");
         setSearchContent("");
     };

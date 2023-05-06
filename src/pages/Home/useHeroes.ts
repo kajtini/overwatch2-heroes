@@ -16,7 +16,6 @@ export const useHeroes = (search: string, roleFilter: string) => {
                         search ? `/${search}` : ""
                     }${roleFilter ? `?role=${roleFilter}` : ""}`
                 );
-                console.log(res);
                 setHeroes(res.data.length ? [...res.data] : [res.data]);
 
                 setIsLoading(false);
