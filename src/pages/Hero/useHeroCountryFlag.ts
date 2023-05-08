@@ -17,8 +17,6 @@ export const useHeroCountryFlag = (heroCountry: string) => {
                     data: [data],
                 } = res;
 
-                console.log(data);
-
                 setHeroCountryFlag(data.flags.png);
 
                 setIsLoading(false);
