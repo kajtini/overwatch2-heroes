@@ -12,7 +12,7 @@ export default {
             },
 
             keyframes: {
-                fadeIn: {
+                fadeInFromBottom: {
                     "0%": {
                         transform: "translate(0, 10px)",
                         opacity: 0,
@@ -36,7 +36,7 @@ export default {
                     },
                 },
 
-                appear: {
+                fadeIn: {
                     "0%": {
                         opacity: 0,
                     },
@@ -47,9 +47,9 @@ export default {
             },
 
             animation: {
+                fadeInFromBottom: "fadeInFromBottom 500ms ease-in-out",
                 fadeIn: "fadeIn 500ms ease-in-out",
                 popIn: "popIn 500ms ease-in-out",
-                appear: "appear 500ms ease-in-out",
             },
         },
     },

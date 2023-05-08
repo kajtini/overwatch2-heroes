@@ -6,7 +6,7 @@ const BackToHome = () => {
     return (
         <Link
             to="/"
-            className="flex items-center gap-2 bg-white bg-opacity-10 backdrop-blur-sm py-5 max-w-[180px] justify-center rounded-lg"
+            className="flex items-center gap-2 bg-white bg-opacity-10 backdrop-blur-sm py-5 max-w-[180px] justify-center rounded-lg hover:-translate-y-1 transition-transform duration-500"
         >
             <FontAwesomeIcon icon={faHouse} />
             Back To Home

@@ -39,7 +39,7 @@ const HeroOverview = ({
                             <div className="h-10 w-20 bg-white bg-opacity-10 backdrop-blur-md animate-pulse rounded-lg"></div>
                         ) : (
                             <img
-                                className="h-8 sm:h-10 rounded-lg animate-fadeIn"
+                                className="h-8 sm:h-10 rounded-lg animate-fadeInFromBottom"
                                 src={heroCountryFlag}
                                 alt={`${heroCountry} flag`}
                             />

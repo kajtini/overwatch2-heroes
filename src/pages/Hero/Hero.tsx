@@ -12,7 +12,7 @@ const Hero = () => {
     const { hero, isLoading } = useHero(heroKey);
 
     return (
-        <section className="flex-grow animate-fadeIn flex flex-col gap-8">
+        <section className="flex-grow animate-fadeInFromBottom flex flex-col gap-8">
             {isLoading && <LoadingSpinner />}
 
             {hero && !isLoading && (
