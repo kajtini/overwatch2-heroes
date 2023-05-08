@@ -1,6 +1,6 @@
 import HeroPortrait from "./HeroPortrait";
-import { useHeroCountryFlag } from "./useHeroCountryFlag";
 import HeroRole from "./HeroRole";
+import HeroCountry from "./HeroCountry";
 
 interface HeroOverviewProps {
     portrait: string;
@@ -25,8 +25,6 @@ const HeroOverview = ({
         ?.trim()
         .toLowerCase();
 
-    const { heroCountryFlag, isLoading } = useHeroCountryFlag(heroCountry);
-
     return (
         <div className="flex md:flex-row flex-col items-center gap-5 md:gap-8">
             <HeroPortrait name={name} portrait={portrait} />
@@ -35,15 +33,7 @@ const HeroOverview = ({
                     <div className="flex items-center gap-3 md:gap-5">
                         <p className="font-bold text-4xl md:text-5xl">{name}</p>
 
-                        {isLoading ? (
-                            <div className="h-10 w-20 bg-white bg-opacity-10 backdrop-blur-md animate-pulse rounded-lg"></div>
-                        ) : (
-                            <img
-                                className="h-8 sm:h-10 rounded-lg animate-fadeInFromBottom"
-                                src={heroCountryFlag}
-                                alt={`${heroCountry} flag`}
-                            />
-                        )}
+                        <HeroCountry heroCountry={heroCountry} />
                     </div>
                     <HeroRole role={role} />
                 </div>
