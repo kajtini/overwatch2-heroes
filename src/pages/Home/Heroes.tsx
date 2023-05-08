@@ -1,5 +1,5 @@
 import HeroCardList from "./HeroCardList";
-import LoadingSpinner from "./LoadingSpinner";
+import LoadingSpinner from "../../components/LoadingSpinner";
 import HeroesNotFoundMessage from "./HeroesNotFoundMessage";
 import { useState } from "react";
 import { useHeroes } from "./useHeroes";

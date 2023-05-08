@@ -9,7 +9,7 @@ export interface Ability {
     name: string;
     description: string;
     icon: string;
-    video: { thumbnail: string; link: string };
+    video: Video;
 }
 
 interface HeroStory {
@@ -23,6 +23,11 @@ export interface Hitpoints {
     shields: number;
     armor: number;
     total: number;
+}
+
+export interface Video {
+    thumbnail: string;
+    link: string;
 }
 
 export interface HeroDetailedInfo {

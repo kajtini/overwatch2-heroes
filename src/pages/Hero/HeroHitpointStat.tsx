@@ -48,7 +48,7 @@ const HeroHitpointStat = ({ stat, value }: HeroHitpointStatProps) => {
     const calculateHitpointValuePercentage = (stat: string, value: number) => {
         switch (stat.toLowerCase()) {
             case "health":
-                return Math.round((value / 850) * 100);
+                return Math.round((value / 700) * 100);
             case "shields":
                 return Math.round((value / 225) * 100);
             case "armor":

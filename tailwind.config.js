@@ -35,11 +35,21 @@ export default {
                         opacity: 1,
                     },
                 },
+
+                appear: {
+                    "0%": {
+                        opacity: 0,
+                    },
+                    "100%": {
+                        opacity: 1,
+                    },
+                },
             },
 
             animation: {
                 fadeIn: "fadeIn 500ms ease-in-out",
                 popIn: "popIn 500ms ease-in-out",
+                appear: "appear 500ms ease-in-out",
             },
         },
     },

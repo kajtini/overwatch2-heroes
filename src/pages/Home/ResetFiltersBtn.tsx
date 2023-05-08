@@ -1,15 +1,15 @@
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface BackToBeginningBtnProps {
+interface ResetFiltersBtnProps {
     setSearch: React.Dispatch<React.SetStateAction<string>>;
     setRoleFilter: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const BackToBeginningBtn = ({
+const ResetFiltersBtn = ({
     setSearch,
     setRoleFilter,
-}: BackToBeginningBtnProps) => {
+}: ResetFiltersBtnProps) => {
     const handleHouseClick = () => {
         setSearch("");
         setRoleFilter("");
@@ -20,10 +20,10 @@ const BackToBeginningBtn = ({
             className="bg-white bg-opacity-10 w-full max-w-[156px] rounded-lg flex items-center justify-center gap-2 py-5 animate-popIn hover:-translate-y-1 transition-all duration-500 shadow-sm"
             onClick={handleHouseClick}
         >
-            <FontAwesomeIcon size="lg" icon={faHouse} />
-            <p>Beginning</p>
+            <FontAwesomeIcon icon={faTrash} />
+            <p>Reset filters</p>
         </button>
     );
 };
 
-export default BackToBeginningBtn;
+export default ResetFiltersBtn;

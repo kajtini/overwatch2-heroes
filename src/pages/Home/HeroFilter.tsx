@@ -1,5 +1,5 @@
 import React from "react";
-import BackToBeginningBtn from "./BackToBeginningBtn";
+import ResetFiltersBtn from "./ResetFiltersBtn";
 import SearchHeroForm from "./SearchHeroForm";
 import FilterByRole from "./FilterByRole";
 
@@ -19,7 +19,7 @@ const HeroFilter = ({
     return (
         <div className="flex flex-col gap-5">
             {(search || roleFilter) && (
-                <BackToBeginningBtn
+                <ResetFiltersBtn
                     setSearch={setSearch}
                     setRoleFilter={setRoleFilter}
                 />
