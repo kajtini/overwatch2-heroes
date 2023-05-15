@@ -1,3 +1,5 @@
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+
 export interface HeroBriefInfo {
     key: string;
     name: string;
@@ -39,4 +41,10 @@ export interface HeroDetailedInfo {
     role: string;
     story: HeroStory;
     hitpoints: Hitpoints;
+}
+
+export interface HitpointInfo {
+    icon: IconDefinition;
+    color: string;
+    valuePercentage: number;
 }

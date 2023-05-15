@@ -1,8 +1,8 @@
 import { HeroBriefInfo } from "../../types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getRoleIcon } from "../../utils/getRoleIcon";
-import { Link } from "react-router-dom";
 import { replaceSpacesWithDashAndLowercase } from "../../utils/replaceSpacesWithDashAndLowercase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 interface HeroCardProps {
     hero: HeroBriefInfo;
@@ -31,17 +31,6 @@ const HeroCard = ({ hero }: HeroCardProps) => {
                     </div>
                     <FontAwesomeIcon icon={heroRoleIcon} size="2xl" />
                 </div>
-
-                {/* 
-                FIXME: Screen flickering while this is active
-                
-                <div className="absolute bottom-0 right-0 p-4 scale-0 group-hover:scale-100 transition-all duration-500 z-10">
-                <FontAwesomeIcon
-                icon={faHeart}
-                className="text-white bg-white p-3 rounded-lg bg-opacity-10 backdrop-blur-sm"
-                size="lg"
-                />
-            </div> */}
             </Link>
         </li>
     );

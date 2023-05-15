@@ -1,9 +1,9 @@
 import HeroCardList from "./HeroCardList";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import HeroesNotFoundMessage from "./HeroesNotFoundMessage";
-import { useState } from "react";
-import { useHeroes } from "./useHeroes";
 import HeroFilter from "./HeroFilter";
+import { useHeroes } from "./useHeroes";
+import { useState } from "react";
 
 const Heroes = () => {
     const [search, setSearch] = useState("");

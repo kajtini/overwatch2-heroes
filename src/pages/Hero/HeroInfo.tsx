@@ -1,7 +1,7 @@
-import { HeroDetailedInfo } from "../../types";
 import HeroAbilities from "./HeroAbilities";
 import HeroHitpoints from "./HeroHitpoints";
 import HeroOverview from "./HeroOverview";
+import { HeroDetailedInfo } from "../../types";
 
 interface HeroInfoProps {
     hero: HeroDetailedInfo;

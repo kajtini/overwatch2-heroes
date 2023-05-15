@@ -4,10 +4,8 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        // FIXME: Scrollbar making the page flicker
-
         <div className="min-h-screen flex flex-col items-center justify-center bg-primary bg-fixed bg-cover font-primary text-white">
-            <div className="max-w-[1200px] w-full flex-grow flex flex-col z-10 px-4 py-20">
+            <div className="max-w-[1200px] w-full flex-grow flex flex-col z-10 px-4 py-10 md:py-20">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/heroes/:id" element={<Hero />} />

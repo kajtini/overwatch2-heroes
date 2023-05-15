@@ -1,7 +1,7 @@
+import { replaceSpacesWithDashAndLowercase } from "../../utils/replaceSpacesWithDashAndLowercase";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { replaceSpacesWithDashAndLowercase } from "../../utils/replaceSpacesWithDashAndLowercase";
 
 interface SearchHeroFormProps {
     setSearch: React.Dispatch<React.SetStateAction<string>>;

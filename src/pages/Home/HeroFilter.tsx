@@ -1,4 +1,3 @@
-import React from "react";
 import ResetFiltersBtn from "./ResetFiltersBtn";
 import SearchHeroForm from "./SearchHeroForm";
 import FilterByRole from "./FilterByRole";

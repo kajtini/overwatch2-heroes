@@ -1,13 +1,13 @@
+import ProgressBar from "../../components/ProgressBar";
+import { HitpointInfo } from "../../types";
 import {
     faCalculator,
     faHeart,
-    faQuestion,
     faShield,
     faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { upperCaseFirstLetter } from "../../utils/uppercaseFirstLetter";
-import ProgressBar from "../../components/ProgressBar";
+import { useEffect, useState } from "react";
 
 interface HeroHitpointStatProps {
     stat: string;
@@ -15,67 +15,69 @@ interface HeroHitpointStatProps {
 }
 
 const HeroHitpointStat = ({ stat, value }: HeroHitpointStatProps) => {
-    const getHitpointStatIcon = (stat: string) => {
-        switch (stat.toLowerCase()) {
-            case "health":
-                return faHeart;
-            case "shields":
-                return faShieldHalved;
-            case "armor":
-                return faShield;
-            case "total":
-                return faCalculator;
-        }
+    const [hitpointInfo, setHitpointInfo] = useState<HitpointInfo | null>(null);
 
-        return faQuestion;
+    const roundValue = (value: number) => Math.round(value);
+
+    const getHitpointInfo = (
+        stat: string,
+        value: number
+    ): HitpointInfo | null => {
+        switch (stat) {
+            case "health":
+                return {
+                    icon: faHeart,
+                    color: "#ef4444",
+                    valuePercentage: roundValue((value / 700) * 100),
+                };
+            case "shields":
+                return {
+                    icon: faShieldHalved,
+                    color: "#06b6d4",
+                    valuePercentage: roundValue(
+                        Math.round((value / 225) * 100)
+                    ),
+                };
+            case "armor":
+                return {
+                    icon: faShield,
+                    color: "#f97316",
+                    valuePercentage: roundValue((value / 300) * 100),
+                };
+            case "total":
+                return {
+                    icon: faCalculator,
+                    color: "#22c55e",
+                    valuePercentage: roundValue((value / 1050) * 100),
+                };
+
+            default:
+                return null;
+        }
     };
 
-    const getHitpointStatColor = (stat: string) => {
-        switch (stat.toLowerCase()) {
-            case "health":
-                return "#ef4444";
-            case "shields":
-                return "#06b6d4";
-            case "armor":
-                return "#f97316";
-            case "total":
-                return "#22c55e";
-        }
+    useEffect(() => {
+        setHitpointInfo(getHitpointInfo(stat, value));
+    }, [stat, value]);
 
-        return "#FFFFFF";
-    };
-
-    const calculateHitpointValuePercentage = (stat: string, value: number) => {
-        switch (stat.toLowerCase()) {
-            case "health":
-                return Math.round((value / 700) * 100);
-            case "shields":
-                return Math.round((value / 225) * 100);
-            case "armor":
-                return Math.round((value / 300) * 100);
-            case "total":
-                return Math.round((value / 1050) * 100);
-        }
-
-        return 0;
-    };
+    if (!hitpointInfo) return <p>No hitpoint info</p>;
 
     return (
         <li
             key={stat}
-            className="flex flex-col gap-5 p-5 bg-white bg-opacity-10 rounded-lg group hover:-translate-y-1 transition-all duration-500 cursor-pointer shadow-md"
+            className="flex flex-col gap-5 p-5 bg-white bg-opacity-10 rounded-lg shadow-md"
         >
-            <FontAwesomeIcon size="4x" icon={getHitpointStatIcon(stat)} />
+            <FontAwesomeIcon size="4x" icon={hitpointInfo.icon} />
 
             <div>
-                <p className="text-2xl font-bold text-center mb-3">
-                    {upperCaseFirstLetter(stat)}
+                <p className="text-2xl font-bold text-center mb-3 capitalize">
+                    {stat}
                 </p>
 
                 <div className="flex w-full items-center gap-3">
                     <ProgressBar
-                        width={calculateHitpointValuePercentage(stat, value)}
-                        color={getHitpointStatColor(stat)}
+                        width={hitpointInfo.valuePercentage}
+                        color={hitpointInfo.color}
                     />
                     <p className="text-slate-300">{value}</p>
                 </div>

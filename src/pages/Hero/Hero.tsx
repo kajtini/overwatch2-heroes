@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
-import { useHero } from "./useHero";
 import HeroInfo from "./HeroInfo";
 import BackToHome from "../../components/BackToHome";
 import LoadingSpinner from "../../components/LoadingSpinner";
+import { useHero } from "./useHero";
+import { useParams } from "react-router-dom";
 
 const Hero = () => {
     const { id: heroKey } = useParams();

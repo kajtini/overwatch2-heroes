@@ -1,5 +1,5 @@
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Hitpoints } from "../../types";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import HeroInfoSectionHeading from "./HeroInfoSectionHeading";
 import HeroHitpointStat from "./HeroHitpointStat";
 

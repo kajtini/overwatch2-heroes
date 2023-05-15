@@ -1,10 +1,10 @@
-import { Ability, Video } from "../../types";
-import { faWandSparkles } from "@fortawesome/free-solid-svg-icons";
 import HeroInfoSectionHeading from "./HeroInfoSectionHeading";
 import HeroAbility from "./HeroAbility";
-import { useState } from "react";
-import HeroAbilityVideo from "./HeroAbilityVideo";
 import Backdrop from "./Backdrop";
+import HeroAbilityVideo from "./HeroAbilityVideo";
+import { Ability, Video } from "../../types";
+import { faWandSparkles } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 interface HeroAbilitiesProps {
     abilities: Ability[];

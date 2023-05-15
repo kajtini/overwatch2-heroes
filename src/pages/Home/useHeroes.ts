@@ -1,6 +1,6 @@
-import axios from "axios";
 import { HeroBriefInfo } from "../../types";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useHeroes = (search: string, roleFilter: string) => {
     const [heroes, setHeroes] = useState<HeroBriefInfo[] | null>(null);
@@ -11,18 +11,17 @@ export const useHeroes = (search: string, roleFilter: string) => {
             try {
                 setIsLoading(true);
 
-                const res = await axios.get(
+                const { data } = await axios.get(
                     `https://overfast-api.tekrop.fr/heroes${
                         search ? `/${search}` : ""
                     }${roleFilter ? `?role=${roleFilter}` : ""}`
                 );
-                setHeroes(res.data.length ? [...res.data] : [res.data]);
-
-                setIsLoading(false);
+                setHeroes(data.length ? [...data] : [data]);
             } catch (err) {
                 console.error(`Error while getting heroes: ${err}`);
-                setIsLoading(false);
                 setHeroes(null);
+            } finally {
+                setIsLoading(false);
             }
         };
 
