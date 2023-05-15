@@ -7,12 +7,12 @@ import { useParams } from "react-router-dom";
 const Hero = () => {
     const { id: heroKey } = useParams();
 
-    if (!heroKey) return <div>No hero key provided!</div>;
+    if (!heroKey) return <div>No hero key found!</div>;
 
     const { hero, isLoading } = useHero(heroKey);
 
     return (
-        <section className="flex-grow animate-fadeInFromBottom flex flex-col gap-8">
+        <div className="flex-grow animate-fadeInFromBottom flex flex-col gap-8">
             {isLoading && <LoadingSpinner />}
 
             {hero && !isLoading && (
@@ -21,7 +21,7 @@ const Hero = () => {
                     <HeroInfo hero={hero} />
                 </>
             )}
-        </section>
+        </div>
     );
 };
 

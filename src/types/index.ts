@@ -29,7 +29,10 @@ export interface Hitpoints {
 
 export interface Video {
     thumbnail: string;
-    link: string;
+    link: {
+        mp4: string;
+        webm: string;
+    };
 }
 
 export interface HeroDetailedInfo {
